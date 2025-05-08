@@ -1,0 +1,55 @@
+.counter_div {
+    overflow: hidden;
+}
+.loading_left .digit-container{
+    justify-content: flex-end;
+    align-items: center;
+}
+.loading_right .digit-container{
+    justify-content: flex-start;
+    align-items: center;
+}   
+.loading_container{
+    position: relative;
+    overflow: hidden;
+}
+.border_animations{
+    position: absolute;
+    z-index: 2;
+    justify-content: space-between;
+}
+.border_top{
+    width: 0.2%;
+    height: 0%;
+    background-color: white;
+}
+.border_bottom{
+    width: 0.2%;
+    height: 0%;
+    justify-self: flex-end;
+    background-color: rgb(222, 222, 222);
+}
+.logo_animation{
+    position: absolute;
+    z-index: 5;
+}
+.left_logo{
+    height: fit-content;
+    padding: 1vh 0vw;
+    overflow: hidden;
+    position: relative;
+}
+.right_logo{
+    height: fit-content;
+    padding: 1vh 0vw;
+    overflow: hidden;
+    position: relative;
+}
+.left_logo h2{
+    position: relative;
+    top: -5vh;
+}
+.right_logo h2{
+    position: relative;
+    top: 8vh;
+}

@@ -1,0 +1,116 @@
+@import url('https://fonts.cdnfonts.com/css/pp-neue-montreal');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+}
+@font-face {
+    font-family: 'PPEditorialOld';
+    src: url('../resources/PPEditorialOld-Italic.otf');
+}
+:root{
+    --dark_color: #161617;
+    --primary_font: 'PP Neue Montreal', sans-serif;
+}
+
+
+h1{
+    font-size:  7vw;
+}
+h2{
+    font-size: 2vw;
+}
+/* widths */
+.w_fc{
+    width: fit-content;
+}
+.w_50{
+    width: 50%;
+}
+.w_100{
+    width: 100%;
+}
+
+/* heights */
+.h_fc{
+    height: fit-content;
+}
+.h_50{
+    height: 50%;
+}
+.h_100vh{
+    height: 100vh;
+}
+.h_100{
+    height: 100%;
+}
+
+/* backgrounds */
+.bg_dark{
+    background-color: var(--dark_color);
+}
+
+/* grid */
+.grid{
+    display: grid;
+}
+
+/* columns */
+.col_2{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* overflow */
+.overflow_hidden{
+    overflow: hidden !important;
+}
+
+/* flexs */
+.flex{
+    display: flex;
+}
+.flex_cl{
+    display: flex;
+    flex-direction: column;
+}
+
+/* justifys */
+.justify_c{
+    justify-content: center;
+}
+
+/* aligns */
+.align_fe{
+    align-items: flex-end;
+}
+.align_fs{
+    align-items: flex-start;
+}
+.align_c{
+    align-items: center;
+}
+
+/* paddings */
+.pright_1{
+    padding-right: 1%;
+}
+.pleft_1{
+    padding-left: 1%;
+}
+.pright_2{
+    padding-right: 2%;
+}
+.pleft_2{
+    padding-left: 2%;
+}
+
+/* texts */
+.secondary_font{
+    font-family: 'PPEditorialOld';
+    font-weight: 400;
+}
+.primary_font{
+    font-family: var(--primary_font);
+}
