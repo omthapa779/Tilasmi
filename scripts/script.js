@@ -152,6 +152,18 @@ async function loadingAnimation() {
         delay: -0.5,
         ease: "power2.inOut",
     });
+    tl.to('.left_logo h2', {
+        top: "10vh",
+        duration: 0.7,
+        delay: -1.2,
+        ease: "power2.inOut"
+    });
+    tl.to('.right_logo h2', {
+        top: "-10vh",
+        duration: 1.1,
+        delay: -1.2,
+        ease: "power2.inOut",
+    });
     tl.to(".loading_right", {
         transform: "translateY(-100%)",
         duration: 1.2,
@@ -161,9 +173,94 @@ async function loadingAnimation() {
     tl.to(".loading_container", {
         height: "0%",
         duration: 1.2,
-        delay: -0.2,
-        ease: "power2.inOut"
+        delay: -1.3,
+        ease: "expo.inOut"
+    });
+    tl.to(".video_hero", {
+        transform: "scale(1.1)",
+        duration: 1.2,
+        delay: -0.9,
+        ease: "expo.inOut"
     });
 }
 
-loadingAnimation();
+function button_hover(){
+    gsap.to('.button_before',{
+        transform: "translateX(110%)",
+        duration: 0.6,
+        ease: "power2.inOut",
+    });
+    gsap.to('.hero_button',{
+        width: "13vw",
+        duration: 0.6,
+        ease: "power2.inOut",
+    });
+    gsap.to('.button_after',{
+        transform: "translateX(0%)",
+        duration: 0.6,
+        ease: "power2.inOut",
+    });
+}
+
+function button_leave(){
+    gsap.to('.button_before',{
+        transform: "translateX(0%)",
+        duration: 0.6,
+        ease: "power2.inOut",
+    });
+    gsap.to('.hero_button',{
+        width: "12vw",
+        duration: 0.6,
+        ease: "power2.inOut",
+    });
+    gsap.to('.button_after',{
+        transform: "translateX(-110%)",
+        duration: 0.6,
+        ease: "power2.inOut",
+    });
+}
+function initHeroAnimation() {
+    // Split the text by lines and words for "website" special handling
+    const heroTitle = document.querySelector('.hero_title h1');
+    const split = new SplitText(heroTitle, {
+        type: "lines,words",
+        linesClass: "split-line",
+        wordsClass: "word"
+    });
+
+    // Create wrapper for lines for cleaner animation
+    split.lines.forEach(line => {
+        const wrapper = document.createElement('div');
+        wrapper.style.overflow = 'hidden';
+        line.parentNode.insertBefore(wrapper, line);
+        wrapper.appendChild(line);
+    });
+
+    // Set initial position
+    gsap.set(split.lines, {
+        y: 100,
+    });
+
+    // Create the animation
+    const tl = gsap.timeline({
+        delay: 0.8
+    });
+
+    // Animate each line
+    tl.to(split.lines, {
+        y: 0,
+        duration: 1.8,
+        stagger: 0.2,
+        ease: "expo.out"
+    });
+}
+
+// Call the animation after your loading sequence
+function startPageAnimations() {
+    // Your existing loading animation
+    loadingAnimation().then(() => {
+        // After loading is complete, start hero animations
+        initHeroAnimation();
+    });
+}
+startPageAnimations();

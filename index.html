@@ -6,10 +6,46 @@
     <title>Tilasmi.</title>
     <link rel="stylesheet" href="./styles/Global.css">
     <link rel="stylesheet" href="./styles/specifics.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 </head>
 <body>
-    <div class="main_container">
-
+    <div class="main_container w_100">
+      <section class="hero_section w_100 h_100vh overflow_hidden">
+        <div class="video_hero w_100 h_100 overflow_hidden">
+          <video autoplay muted loop class="w_100 h_100 object_fco">
+            <source src="./resources/hero.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="video_overlay w_100 h_100 bg_dark"></div>
+        </div>
+        <div class="hero_content w_100 h_100 padding_s5">
+          <div class="navbar w_100 h_10vh grid col_2 justify_sb align_c">
+            <div class="logo_text w_100 h_100 flex_cl justify_c">
+              <h2 class="secondary_font">Tilasmi.</h2>
+            </div>
+            <div class="navbar_content w_100 h_100 flex align_c justify_fe gap_s">
+              <h4 class="primary_font font_w500 menu_link">Home</h4>
+              <h4 class="primary_font font_w500 menu_link">About</h4>
+              <h4 class="primary_font font_w500 menu_link">Works</h4>
+              <h4 class="primary_font font_w500 menu_link">Contact</h4>
+              <h3 class="primary_font font_w500 menu_extend"><i class="ri-menu-line"></i></h3>
+            </div>
+          </div>
+          <div class="hero_main w_100 h_90 grid row_2  padding_vs">
+            <div class="hero_title w_100 h_100 flex_cl justify_c align_c">
+              <h1 class="primary_font text_ac line_h95">Want to <br>build a <span class="secondary_font">website</span> ?</h1>
+              <a href="#" onmouseenter="button_hover()" onmouseleave="button_leave()"><div class="hero_button overflow_hidden flex justify_c">
+                <h3 class="primary_font font_w500 button_before h_100 w_100 flex align_c justify_c">Get Started</h3>
+                <h3 class="primary_font font_w500 button_after h_100 w_100 flex align_c justify_c">Get a Quote</h3>
+              </div>
+            </a>
+            </div>
+            <div class="hero_fillups w_100 h_100 flex_cl justify_fe align_c">
+              <h4 class="secondary_font font_w500"> Explore more <i class="ri-arrow-down-s-line"></i></h4>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
     <div class="loading_container w_100 h_100vh col_2 grid overflow_hidden">
         <div class="loading_left w_100 h_100 bg_dark">
@@ -37,5 +73,6 @@
     </div>      
 </body>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 <script src="./scripts/script.js"></script>
 </html>

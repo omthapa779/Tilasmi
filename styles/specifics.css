@@ -10,8 +10,9 @@
     align-items: center;
 }   
 .loading_container{
-    position: relative;
+    position: absolute;
     overflow: hidden;
+    z-index: 10;
 }
 .border_animations{
     position: absolute;
@@ -52,4 +53,80 @@
 .right_logo h2{
     position: relative;
     top: 8vh;
+}
+.main_container{
+    position: absolute;
+    z-index: 1;
+}
+.hero_section{
+    position: relative;
+}
+.video_hero{
+    transform: scale(1);
+    position: absolute;
+    z-index: 5
+}
+.video_hero video{
+   position: absolute;
+   z-index: 2;
+}
+.video_hero .video_overlay{
+    position: absolute;
+    z-index: 5;
+    opacity: 70%;
+}
+.hero_content{
+    position: absolute;
+    z-index: 20;
+}
+
+/* buttons */
+.hero_button{
+    width: 12vw;
+    height: 7vh;
+    border: 0.2vw solid white;
+    margin-top: 2.5vh;
+    border-radius: 2vw;
+    position: relative;
+}
+.button_before{
+    position: absolute;
+    text-wrap: nowrap;
+}
+.button_after{
+    position: absolute;
+    text-wrap: nowrap;
+    transform: translateX(-110%);
+}
+
+/* Text split animation styles */
+.split-line {
+    display: block;
+    will-change: transform;
+}
+
+.menu_extend{
+    display: none;
+}
+@media (max-width: 999px){
+    .hero_button{
+        width: 25vw;
+    }
+    .hero_main {
+        grid-template-rows: repeat(1, 1fr) !important; 
+    }
+    .hero_fillups{
+        display: none;
+    }
+    .menu_link{
+        display: none !important;
+    }
+    .menu_extend{
+        display: block; 
+    }
+}
+@media (max-width: 699px){
+    .hero_button{
+        width: 45vw;
+    }
 }

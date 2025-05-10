@@ -22,6 +22,16 @@ h1{
 h2{
     font-size: 2vw;
 }
+h3{
+    font-size: 1.2vw;
+}
+h4{
+    font-size: 1vw;
+}
+
+a{
+    text-decoration: none;
+}
 /* widths */
 .w_fc{
     width: fit-content;
@@ -39,6 +49,12 @@ h2{
 }
 .h_50{
     height: 50%;
+}
+.h_90{
+    height: 90%;
+}
+.h_10vh{
+    height: 10vh;
 }
 .h_100vh{
     height: 100vh;
@@ -61,6 +77,10 @@ h2{
 .col_2{
     grid-template-columns: repeat(2, 1fr);
 }
+/* rows */
+.row_2{
+    grid-template-rows: repeat(2, 1fr);
+}
 
 /* overflow */
 .overflow_hidden{
@@ -79,6 +99,13 @@ h2{
 /* justifys */
 .justify_c{
     justify-content: center;
+}
+.justify_sb{
+    justify-content: space-between;
+}
+.justify_fe{
+    justify-content: flex-end;
+
 }
 
 /* aligns */
@@ -105,6 +132,14 @@ h2{
 .pleft_2{
     padding-left: 2%;
 }
+.padding_s5{
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+.padding_vs{
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
 
 /* texts */
 .secondary_font{
@@ -113,4 +148,53 @@ h2{
 }
 .primary_font{
     font-family: var(--primary_font);
+}
+.text_ac{
+    text-align: center;
+}
+
+/* objects */
+.object_fco{
+    object-fit: cover;
+    object-position: center;
+}
+
+/* fonts */
+.font_w400{
+    font-weight: 400;
+}
+.font_w500{
+    font-weight: 500;
+}
+
+/* gaps */
+.gap_s{
+    gap: 1vw;
+}
+
+.line_h95{
+    line-height: 95%;
+}
+
+@media (max-width: 999px) {
+    h1{
+        font-size:  12vw;
+    }
+    h2{
+        font-size: 5.5vw;
+    }
+    h3{
+        font-size: 3.5vw;
+    }
+    h4{
+        font-size: 3vw;
+    }
+}
+@media (max-width: 699px){
+    h2{
+        font-size: 7vw;
+    }
+    h3{
+        font-size: 5.5vw;
+    }
 }
