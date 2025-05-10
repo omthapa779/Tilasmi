@@ -4,10 +4,12 @@
 .loading_left .digit-container{
     justify-content: flex-end;
     align-items: center;
+    margin-right: 1vw;
 }
 .loading_right .digit-container{
     justify-content: flex-start;
     align-items: center;
+    margin-left: 1vw;
 }   
 .loading_container{
     position: absolute;
