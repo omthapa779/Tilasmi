@@ -115,9 +115,6 @@
     .hero_main {
         grid-template-rows: repeat(1, 1fr) !important; 
     }
-    .hero_fillups{
-        display: none;
-    }
     .menu_link{
         display: none !important;
     }

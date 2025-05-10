@@ -25,7 +25,7 @@ function animateDigit(element, number, delay = 0) {
             // Match the smooth exit animation style
             gsap.to(prevContainer, {
                 transform: "translateY(-100%)",
-                duration: 1.2,
+                duration: 0.6,
                 ease: "expo.inOut",
                 onComplete: () => prevContainer.remove()
             });
@@ -41,7 +41,7 @@ function animateDigit(element, number, delay = 0) {
                 transform: "translateY(0%)",
                 opacity: 1,
                 delay: delay,                                    
-                duration: 1.2,
+                duration: 0.6,
                 ease: "expo.inOut",
                 onComplete: () => resolve()
             }
@@ -122,7 +122,7 @@ async function loadingAnimation() {
     ]);
 
     // Wait with blank screen
-    await new Promise(resolve => setTimeout(resolve, 300));
+    await new Promise(resolve => setTimeout(resolve, 600));
 
     // Final container exit animation
     tl.to('.border_top',{
@@ -185,6 +185,7 @@ async function loadingAnimation() {
 }
 
 function button_hover(){
+      if (window.innerWidth <= 1024) return;
     gsap.to('.button_before',{
         transform: "translateX(110%)",
         duration: 0.6,
@@ -203,6 +204,7 @@ function button_hover(){
 }
 
 function button_leave(){
+    if (window.innerWidth <= 1024) return;
     gsap.to('.button_before',{
         transform: "translateX(0%)",
         duration: 0.6,
