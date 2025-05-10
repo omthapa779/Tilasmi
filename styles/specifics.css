@@ -48,11 +48,11 @@
 }
 .left_logo h2{
     position: relative;
-    top: -5vh;
+    top: -10vh;
 }
 .right_logo h2{
     position: relative;
-    top: 8vh;
+    top: 10vh;
 }
 .main_container{
     position: absolute;
