@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
 }
 @font-face {
     font-family: 'PPEditorialOld';
@@ -96,6 +95,14 @@ a{
     flex-direction: column;
 }
 
+/* colors */
+.black_cl{
+    color: var(--dark_color) !important;
+}
+.white_cl{
+    color: white;
+}
+
 /* justifys */
 .justify_c{
     justify-content: center;
@@ -105,7 +112,9 @@ a{
 }
 .justify_fe{
     justify-content: flex-end;
-
+}
+.justify_fs{
+    justify-content: flex-start;
 }
 
 /* aligns */
@@ -139,6 +148,10 @@ a{
 .padding_vs{
     padding-top: 5vh;
     padding-bottom: 5vh;
+}
+.padding_v10{
+    padding-top: 10vh;
+    padding-bottom: 10vh;
 }
 
 /* texts */

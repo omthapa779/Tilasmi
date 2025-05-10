@@ -176,11 +176,16 @@ async function loadingAnimation() {
         delay: -1.3,
         ease: "expo.inOut"
     });
-    tl.to(".video_hero", {
+    tl.to(".video", {
         transform: "scale(1.1)",
         duration: 1.2,
         delay: -0.9,
         ease: "expo.inOut"
+    });
+    tl.to('.main_container',{
+        maxHeight: "fit-content",
+        overflow: "hidden",
+        duration: 0.1,
     });
 }
 
@@ -266,3 +271,77 @@ function startPageAnimations() {
     });
 }
 startPageAnimations();
+
+// lenis
+const lenis = new Lenis({
+  autoRaf: true,
+});
+
+// Listen for the scroll event and log the event data
+lenis.on('scroll', (e) => {
+  console.log(e);
+});
+
+
+gsap.registerPlugin(ScrollTrigger, SplitText);
+
+function initScrollSplitAnimations() {
+    document.querySelectorAll('[data-split]').forEach(el => {
+        // Destroy old SplitText instance if re-initializing
+        if (el._split) {
+            el._split.revert();
+        }
+
+        // Split text into lines and words
+        const split = new SplitText(el, {
+            type: "lines,words",
+            linesClass: "split-line",
+            wordsClass: "word"
+        });
+
+        el._split = split; // store reference for potential cleanup
+
+        // Wrap each line with overflow hidden container
+        split.lines.forEach(line => {
+            const wrapper = document.createElement('div');
+            wrapper.style.overflow = 'hidden';
+            line.parentNode.insertBefore(wrapper, line);
+            wrapper.appendChild(line);
+        });
+
+        // Initial state
+        gsap.set(split.lines, { y: 700, opacity: 0 });
+
+        // Scroll-triggered animation
+        ScrollTrigger.create({
+            trigger: el,
+            start: "top 85%",
+            onEnter: () => {
+                gsap.to(split.lines, {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1.6,
+                    ease: "expo.out",
+                    stagger: 0.15
+                });
+            },
+            onLeaveBack: () => {
+                // Animate "out" when scrolling back up
+                gsap.to(split.lines, {
+                    y: 700,
+                    opacity: 0,
+                    duration: 0.4,
+                    ease: "expo.in",
+                    stagger: 0.1
+                });
+            }
+        });
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    initScrollSplitAnimations();
+    ScrollTrigger.refresh(); // << important!
+});
+
+  

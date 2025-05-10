@@ -1,6 +1,10 @@
 .counter_div {
     overflow: hidden;
 }
+.main_container{
+    max-height: 100vh;
+    overflow: hidden;
+}
 .loading_left .digit-container{
     justify-content: flex-end;
     align-items: center;
@@ -64,9 +68,11 @@
     position: relative;
 }
 .video_hero{
-    transform: scale(1);
     position: absolute;
     z-index: 5
+}
+.video{
+    transform: scale(1);
 }
 .video_hero video{
    position: absolute;
@@ -110,6 +116,7 @@
 .menu_extend{
     display: none;
 }
+
 @media (max-width: 999px){
     .hero_button{
         width: 25vw;
@@ -123,9 +130,18 @@
     .menu_extend{
         display: block; 
     }
+    .about_right h1 {
+        width: 70% !important;
+    }
+    .about_left h2 {
+        width: 100% !important;
+    }
 }
 @media (max-width: 699px){
     .hero_button{
         width: 45vw;
+    }
+    .about_us {
+        height: 70vh !important;
     }
 }

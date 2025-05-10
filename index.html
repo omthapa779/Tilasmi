@@ -10,9 +10,9 @@
 </head>
 <body>
     <div class="main_container w_100">
-      <section class="hero_section w_100 h_100vh overflow_hidden">
+      <section class="hero_section w_100 h_100vh overflow_xhidden white_cl">
         <div class="video_hero w_100 h_100 overflow_hidden">
-          <video autoplay muted loop class="w_100 h_100 object_fco">
+          <video autoplay muted loop class="video w_100 h_100 object_fco">
             <source src="./resources/hero.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -35,8 +35,8 @@
             <div class="hero_title w_100 h_100 flex_cl justify_c align_c">
               <h1 class="primary_font text_ac line_h95">Want to <br>build a <span class="secondary_font">website</span> ?</h1>
               <a href="#" onmouseenter="button_hover()" onmouseleave="button_leave()"><div class="hero_button overflow_hidden flex justify_c">
-                <h3 class="primary_font font_w500 button_before h_100 w_100 flex align_c justify_c">Get Started</h3>
-                <h3 class="primary_font font_w500 button_after h_100 w_100 flex align_c justify_c">Get a Quote</h3>
+                <h3 class="primary_font font_w500 button_before h_100 w_100 flex align_c justify_c white_cl">Get Started</h3>
+                <h3 class="primary_font font_w500 button_after h_100 w_100 flex align_c justify_c white_cl">Get a Quote</h3>
               </div>
             </a>
             </div>
@@ -46,8 +46,24 @@
           </div>
         </div>
       </section>
+
+      <section class="about_us w_100 h_100vh grid row_2 justify_c padding_s5 padding_v10">
+        <div class="about_right flex justify_fe">
+          <h1 class="primary_font black_cl w_50 line_h95" data-split>WE BUILD DIGITAL FUTURES</h1>
+        </div>
+          <div class="about_left flex justify_fs h_100 align_c">
+          <h2 class="primary_font black_cl w_50 line_h95 font_w500"><span class="secondary_font black_cl">Tilasmi</span> isn’t just another digital agency — we’re your partners in crafting scalable, standout digital experiences. From sleek websites to strategic marketing, our mission is to elevate your brand with purpose and precision.</h2>
+        </div>
+      </section>
+
+      <section class="services w_100 h_100vh padding_s5 padding_v10">
+        <h1 class="primary_font black_cl" data-split> OUR SERVICES</h1>
+      </section>
     </div>
-    <div class="loading_container w_100 h_100vh col_2 grid overflow_hidden ">
+
+
+    <!-- loadings -->
+    <div class="loading_container w_100 h_100vh col_2 grid overflow_hidden white_cl">
         <div class="loading_left w_100 h_100 bg_dark">
           <div class="block_counter_one w_100 h_100">
             <h1 class="secondary_font counter_div ">
@@ -72,7 +88,11 @@
         </div>
     </div>      
 </body>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script src="https://unpkg.com/lenis@1.3.1/dist/lenis.min.js"></script> 
+<!-- Core GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- Plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js" integrity="sha512-wOeEC+9qERAzhliwBFPDb6t8TiFFxdxG8vhK/Ygs7TuC44bpg8pg/X2/U/u+0X4fK05wb9id1EIipnF02+CFQw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="./scripts/script.js"></script>
 </html>
