@@ -81,6 +81,12 @@ a{
     grid-template-rows: repeat(2, 1fr);
 }
 
+
+/* margins */
+.mtop_5vh{
+    margin-top: 5vh;
+}
+
 /* overflow */
 .overflow_hidden{
     overflow: hidden !important;
@@ -140,6 +146,10 @@ a{
 }
 .pleft_2{
     padding-left: 2%;
+}
+.padding_s2{
+    padding-left: 2vw;
+    padding-right: 2vw;
 }
 .padding_s5{
     padding-left: 5vw;

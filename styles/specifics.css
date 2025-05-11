@@ -117,6 +117,16 @@
     display: none;
 }
 
+/* services card */
+.service_card{
+    height: 30vh;
+    border-top: 0.2vw solid rgb(110, 110, 110);
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 0.5fr 1fr 0.7fr;
+    grid-template-rows: 1fr;
+    padding: 3vh 2.5vw;
+}
+
 @media (max-width: 999px){
     .hero_button{
         width: 25vw;
@@ -136,6 +146,13 @@
     .about_left h2 {
         width: 100% !important;
     }
+    .service_image, .service_description{
+        display: none;
+    }
+    .service_card{
+        height: 20vh;
+        grid-template-columns: 0.5fr 2fr 1fr;
+    }
 }
 @media (max-width: 699px){
     .hero_button{
@@ -143,5 +160,12 @@
     }
     .about_us {
         height: 70vh !important;
+    }
+    .service_subtitle {
+        display: none;
+    }
+    .service_card {
+        height: 15vh;
+        grid-template-columns: 0.5fr 2fr;
     }
 }
