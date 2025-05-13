@@ -125,6 +125,26 @@
     grid-template-columns: 0.3fr 1fr 0.5fr 1fr 0.7fr;
     grid-template-rows: 1fr;
     padding: 3vh 2.5vw;
+    background-color: white;
+}
+.card_1{
+    position: relative;
+    z-index: 20;
+}
+.card_2{
+    position: relative;
+    z-index: 15;
+}
+.card_3{
+    position: relative;
+    z-index: 10;
+}
+.card_4{
+    position: relative;
+    z-index: 5;
+}
+.card_animated {
+  transform-origin: left center;
 }
 
 @media (max-width: 999px){

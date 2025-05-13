@@ -341,7 +341,37 @@ function initScrollSplitAnimations() {
 
 document.addEventListener("DOMContentLoaded", () => {
     initScrollSplitAnimations();
+    service_card();
     ScrollTrigger.refresh(); // << important!
 });
 
-  
+function service_card(){
+  document.querySelectorAll('[data-service]').forEach(el => {
+    gsap.set(el, {
+      rotate: '-25deg', // starts tilted back
+      opacity: '0',
+      transformOrigin: "left center"
+    });
+
+    ScrollTrigger.create({
+      trigger: el,
+      start: "center center",
+      onEnter: () => {
+        gsap.to(el, {
+          rotate: '0deg',
+          duration: 1.2,
+          ease: "expo.out",
+          opacity: '1',
+        });
+      },
+      onLeaveBack: () => {
+        gsap.to(el, {
+          rotate: '-25deg',
+          duration: 1.6,
+          ease: "expo.out",
+          opacity: '0',
+        });
+      }
+    });
+  });
+};
