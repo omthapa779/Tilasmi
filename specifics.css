@@ -1,0 +1,42 @@
+.video_holder{
+    overflow: hidden;
+}
+.main_container{
+    position: absolute;
+    z-index: 999;
+}
+.gradient-blob {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10vw;          /* big blob */
+  height: 10vw;
+  pointer-events: none;  /* so it doesn't block clicks */
+  background:  radial-gradient(circle, #eab942, #ec9c26, #ed7c14, #ed5613, #ea171e);;
+  filter: blur(3vw);
+  transform: translate(-20%, -20%);
+  transition: background 0.3s ease;
+  mix-blend-mode: screen; /* blends nicely with background */
+  z-index: 800;
+  opacity: 90%;         /* barely visible */
+  animation: wow infinite 5s ease-in-out;
+}
+
+@keyframes wow {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.loading{
+    position: absolute;
+    z-index: 9999;
+    background-color: black;
+}
+.progress-bar{
+    height: 0.1vh;
+    width: 0vw;
+    background:  radial-gradient(circle, #eab942, #ec9c26, #ed7c14, #ed5613, #ea171e);
+}
