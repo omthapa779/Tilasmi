@@ -33,6 +33,12 @@ h5{
 .w_80vw{
     width: 80vw;
 }
+.w_30{
+    width: 30%;
+}
+.w_40{
+    width: 40%;
+}
 .w_100{
     width: 100%;
 }
@@ -136,4 +142,13 @@ button{
 /* font weights */
 .font_w400{
     font-weight: 400;
+}
+
+/* overflows */
+.overflow_hidden{
+    overflow: hidden;
+}
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
 }

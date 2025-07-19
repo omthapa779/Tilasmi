@@ -1,8 +1,15 @@
-// Initialize Lenis
+// Initialize Lenis but pause it initially
 const lenis = new Lenis({
-  autoRaf: true,
-  lerp: 0.08,
+  duration: 1.2,
+  smooth: true
 });
+lenis.stop(); // disables scrolling
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -31,11 +38,12 @@ window.addEventListener('mousemove', (e) => {
 
 const progressBar = document.querySelector('.progress-bar');
 const progressText = document.querySelector('.progress-text');
+const loadingScreen =  document.querySelector('.loading');
 
 let progress = 0;
 
 function updateProgress() {
-  if (progress < 90) {
+  if (progress < 100) {
     progress += 1;
     progressBar.style.width = progress + '%';
     progressText.textContent = progress + '%';
@@ -47,12 +55,99 @@ function updateProgress() {
 updateProgress();
 
 window.addEventListener('load', () => {
-  // When page fully loads, jump to 100%
   progressBar.style.width = '100%';
   progressText.textContent = '100%';
 
-  // Optionally hide progress bar after a delay
   setTimeout(() => {
-    progressBar.style.opacity = '0';
-  }, 500);
+    gsap.to(loadingScreen, {
+      height: 0,
+      duration: 0.4,
+      ease: "power1.inOut",
+      onComplete: () => {
+        // Re-enable Lenis scroll AFTER loading screen is gone
+        lenis.start();
+        hero_section_reveal();
+      }
+    });
+  }, 1700);
 });
+
+
+function hero_section_reveal(){
+  const splitWords = (el) => {
+    const text = el.textContent.trim();
+    el.textContent = "";
+    el.style.visibility = "visible";
+
+    text.split(" ").forEach((word) => {
+      const span = document.createElement("span");
+      span.textContent = word;
+      span.classList.add("word");
+      el.appendChild(span);
+      el.append(" "); // Add space after each word
+    });
+  };
+
+  const animateWords = (el) => {
+    const words = el.querySelectorAll(".word");
+    gsap.to(words, {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      stagger: 0.1,
+      ease: "power4.out"
+    });
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        splitWords(el);
+        animateWords(el);
+        obs.unobserve(el);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll(".animate-text").forEach(el => observer.observe(el));
+}
+
+const image = document.querySelector(".about-image-wrapper");
+const text = document.querySelector(".about-text");
+const abouttexts = document.querySelectorAll(".about-text h2");
+
+gsap.timeline({
+  scrollTrigger: {
+    trigger: "#aboutTrigger",
+    start: "center center",
+    end: "center 20%",
+    scrub: true,
+    markers: true,
+    pin: true
+  }
+})
+.to(image, {
+  scale: 3,
+  borderRadius: "0%",
+  ease: "power2.inOut"
+}, 0)
+.to(text.children[0], { // ABOUT
+  x: "-100%",
+  opacity: 0,
+  display: "none"
+}, 0)
+.to(text.children[2], { // US
+  x: "100%",
+  opacity: 0,
+    onComplete: () => {
+      abouttexts.style.display = "none"; // Show the h2 elements
+    }
+}, 0)
+.to(image, {
+  width: "100vw",
+  height: "100vh",
+  scale: 1,
+  duration: 1,
+  ease: "power2.inOut"
+}, 0.5);

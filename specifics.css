@@ -40,3 +40,56 @@
     width: 0vw;
     background:  radial-gradient(circle, #eab942, #ec9c26, #ed7c14, #ed5613, #ea171e);
 }
+
+/* hero sections animation */
+.animate-text {
+  display: inline-block;
+  overflow: hidden;
+  visibility: hidden;
+}.animate-text .word {
+  display: inline-block;
+  margin-right: 0.25em;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.about-intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 8vw;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-text {
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 0.5vw;
+}
+
+.about-image-wrapper {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-full {
+  height: 100vh;
+  background: #111;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
