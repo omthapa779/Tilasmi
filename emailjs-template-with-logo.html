@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>New Project Inquiry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .logo {
+            margin-bottom: 15px;
+        }
+        .logo img {
+            height: 40px;
+            width: auto;
+            margin-bottom: 10px;
+        }
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d4af37;
+            margin-top: 5px;
+        }
+        .notification {
+            background: #d4af37;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .info-section {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .detail-row:last-child {
+            border-bottom: none;
+        }
+        .label {
+            font-weight: bold;
+            color: #666;
+        }
+        .value {
+            color: #333;
+        }
+        .message-box {
+            background: white;
+            border-left: 4px solid #d4af37;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 12px;
+        }
+        .reply-button {
+            display: inline-block;
+            background: #d4af37;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .contact-method {
+            background: #d4af37;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <!-- OPTION 1: Replace with your logo URL -->
+                <img src="https://yourdomain.com/images/logo.png" alt="Tilasmi Inc.">
+                
+                <!-- OPTION 2: Use base64 encoded logo (replace the data:image/png;base64, part with your actual base64) -->
+                <!-- <img src="data:image/png;base64,YOUR_BASE64_LOGO_HERE" alt="Tilasmi Inc."> -->
+                
+                <div class="logo-text">Tilasmi Inc.</div>
+            </div>
+            <div>New Project Inquiry Received</div>
+        </div>
+        
+        <div class="notification">
+            New project inquiry from {{user_name}}
+        </div>
+        
+        <div class="info-section">
+            <div class="detail-row">
+                <span class="label">Name:</span>
+                <span class="value">{{user_name}}</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Email:</span>
+                <span class="value">{{user_email}}</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Phone:</span>
+                <span class="value">{{user_phone}}</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Preferred Contact:</span>
+                <span class="value contact-method">{{user_contact_method}}</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Service:</span>
+                <span class="value">{{user_service}}</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Budget:</span>
+                <span class="value">{{user_budget}}</span>
+            </div>
+            <div class="detail-row">
+                <span class="label">Time:</span>
+                <span class="value">{{time}}</span>
+            </div>
+        </div>
+        
+        <div class="message-box">
+            <strong>Project Details:</strong><br>
+            {{user_message}}
+        </div>
+        
+        <div style="text-align: center;">
+            <p>Please respond to this inquiry at your earliest convenience.</p>
+            <a href="mailto:{{user_email}}?subject=Re: Project Inquiry - {{user_contact_method}}" class="reply-button">
+                Reply to {{user_name}}
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p>This inquiry was submitted through the Tilasmi website contact form.</p>
+            <p>© 2024 Tilasmi Inc.</p>
+        </div>
+    </div>
+</body>
+</html> 
